@@ -1,0 +1,27 @@
+body { font-family: system-ui, sans-serif; margin: 0; color: #2b1d12; background: #fffdfa; }
+header { background: #4C311E; }
+nav { display: flex; gap: 20px; padding: 14px 24px; }
+nav a { color: #F5EBE0; text-decoration: none; }
+nav a.active { font-weight: bold; border-bottom: 2px solid #F5EBE0; }
+main { max-width: 820px; margin: 24px auto; padding: 0 24px; }
+h1 { color: #4C311E; }
+a { color: #8a4b1f; }
+table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #E6DACE; }
+th { background: #F5EBE0; }
+.field { margin-bottom: 14px; }
+.field label { display: block; font-weight: bold; margin-bottom: 4px; }
+.field input, .field select {
+    padding: 8px; width: 320px;
+    border: 1px solid #E6DACE; border-radius: 4px;
+}
+.field input[type="checkbox"] { width: auto; }
+.errorlist { color: #a12a1e; margin: 4px 0 0; padding-left: 18px; }
+button {
+    background: #4C311E; color: white; border: none;
+    padding: 10px 18px; border-radius: 4px; cursor: pointer;
+}
+.btn-danger { background: #a12a1e; }
+.message { padding: 10px 14px; border-radius: 4px; }
+.message.success { background: #F5EBE0; color: #4C311E; }
+.message.error { background: #fce9e7; color: #a12a1e; }

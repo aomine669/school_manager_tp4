@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil · School Manager{% endblock %}
+
+{% block content %}
+    <h1>Bienvenue à {{ school_name }}</h1>
+    <p>{{ nb_students }} étudiant{{ nb_students|pluralize }}</p>
+    <p>dont {{ nb_active }} actif{{ nb_active|pluralize }}</p>
+    <p><a href="{% url 'students:list' %}">Voir la liste des étudiants</a></p>
+{% endblock %}

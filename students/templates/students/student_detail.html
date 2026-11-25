@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{ student }} · School Manager{% endblock %}
+
+{% block content %}
+    <h1>{{ student }}</h1>
+    <ul>
+        <li>Classe : {{ student.classe }}</li>
+        <li>Email : {{ student.email }}</li>
+        <li>Téléphone : {{ student.phone|default:"Non renseigné" }}</li>
+        <li>Date de naissance : {{ student.birth_date|date:"d/m/Y"|default:"Non renseignée" }}</li>
+        <li>Statut : {% if student.active %}Actif{% else %}Inactif{% endif %}</li>
+    </ul>
+    <p>
+        <a href="{% url 'students:update' student.id %}">Modifier</a>
+        ·
+        <a href="{% url 'students:delete' student.id %}">Supprimer</a>
+    </p>
+    <p><a href="{% url 'students:list' %}">← Retour à la liste</a></p>
+{% endblock %}

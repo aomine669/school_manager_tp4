@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Étudiants · School Manager{% endblock %}
+
+{% block content %}
+    <h1>Étudiants</h1>
+    <p><a href="{% url 'students:create' %}">+ Inscrire un étudiant</a></p>
+    <form method="get">
+        <input type="text" name="q" value="{{ query }}"
+               placeholder="Nom ou prénom">
+        <button type="submit">Rechercher</button>
+    </form>
+    {% if students %}
+        <table>
+            <thead>
+                <tr><th>Prénom</th><th>Nom</th><th>Classe</th><th>Actif</th></tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td><a href="{% url 'students:detail' student.id %}">{{ student.first_name }}</a></td>
+                        <td>{{ student.last_name }}</td>
+                        <td><a href="{% url 'students:by_class' student.classe %}">{{ student.classe }}</a></td>
+                        <td>{% if student.active %}Oui{% else %}Non{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucun étudiant inscrit.</p>
+    {% endif %}
+{% endblock %}
